@@ -1,8 +1,13 @@
 Feature: Matrix
 <<<<<<< HEAD
+<<<<<<< HEAD
   
+=======
+  Background:
+    Given I have A Matrix
+
+>>>>>>> dev2
   Scenario: Cofactor
-  Given I have A Matrix
     When I compute cofactor of
       | col1 | col2  |
       | 1    | 2  |
@@ -11,6 +16,7 @@ Feature: Matrix
       | col1 | col2 |
       | 4    | -3  |
       | -2   | 1  |
+<<<<<<< HEAD
 =======
   Background:
     Given I have A Matrix
@@ -38,3 +44,17 @@ Feature: Matrix
 
   
 >>>>>>> 93705d7c31c1a3f9ecd9f12ab120042145bd6fd2
+=======
+	  
+	  
+	  
+  Scenario: Inverse
+    When I compute inverse of
+      | col1 | col2  |
+      | 1    | 2  |
+      | 3    | 4  |
+    Then The result of inverse is
+      | col1 | col2 |
+      | -2    | 1  |
+      | 1.5   | -0.5  |
+>>>>>>> dev2

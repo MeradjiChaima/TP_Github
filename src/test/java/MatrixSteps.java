@@ -15,13 +15,19 @@ import static org.junit.Assert.assertEquals;
 
 public class MatrixSteps {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+    Matrix inverseMatrix ;
+>>>>>>> dev2
     Matrix cofactorMatrix ;
 =======
     double det ;
     Matrix transposeMatrix ;
 >>>>>>> 93705d7c31c1a3f9ecd9f12ab120042145bd6fd2
     Matrix mat;
+<<<<<<< HEAD
 
     @Given("I have A Matrix")
     public void iHaveAMatrix() {
@@ -31,6 +37,10 @@ public class MatrixSteps {
 <<<<<<< HEAD
 
     // Cofactor
+=======
+	
+	// Cofactor
+>>>>>>> dev2
 
     @When("I compute cofactor of")
     public void iComputeCofactorOf(DataTable table) throws NoSquareException {
@@ -106,13 +116,56 @@ public class MatrixSteps {
 
 
     }
+<<<<<<< HEAD
 =======
         assertEquals(result,transposeMatrix);
+=======
+
+    @Given("I have A Matrix")
+    public void iHaveAMatrix() {
+         mat=new Matrix();
+    }
+
+    @When("I compute inverse of")
+    public void iComputeInverseOf(DataTable table) throws NoSquareException {
+        double [][] data = new double[2][2];
+        List<Map<String, Double>> rows = table.asMaps(String.class, Double.class);
+        int i =0;
+        for (Map<String, Double> columns : rows){
+            int j =0;
+            data[i][j]= columns.get("col1");
+            data[i][j+1] = columns.get("col2");
+            i=i+1;
+        }
+        mat.setData(data);
+        inverseMatrix = MatrixMathematics.inverse(mat);
+    }
+
+    @Then("The result of inverse is")
+    public void iFindAsInverseResult(DataTable table) {
+        double [][] data = new double[2][2];
+        List<Map<String, Double>> rows = table.asMaps(String.class, Double.class);
+        int i =0;
+        for (Map<String, Double> columns : rows){
+            int j =0;
+            data[i][j]= columns.get("col1");
+            data[i][j+1] = columns.get("col2");
+            i=i+1;
+        }
+        Matrix result = new Matrix() ;
+        result.setData(data);
+        assertEquals(result,inverseMatrix);
+>>>>>>> dev2
 
 
     }
 
+<<<<<<< HEAD
    
 >>>>>>> 93705d7c31c1a3f9ecd9f12ab120042145bd6fd2
+=======
+
+    
+>>>>>>> dev2
 }
 
